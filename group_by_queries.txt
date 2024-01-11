@@ -1,0 +1,25 @@
+1) SELECT 
+    YEAR(enrolment_date) AS anno, 
+    COUNT(id) AS numero_iscritti
+FROM `students`
+GROUP BY anno;
+
+2) SELECT 
+    `office_number` AS edificio, 
+    COUNT(`id`) AS numero_insegnanti 
+FROM `teachers`
+GROUP BY edificio  
+ORDER BY `edificio` ASC
+
+3) SELECT 
+    `exam_id` AS id_appello, 
+    AVG(`vote`) AS media_voto 
+FROM `exam_student` GROUP BY id_appello;
+
+4) SELECT 
+	departments.name AS dipartimento,
+	COUNT(degrees.id) AS numero_lauree
+FROM `degrees`
+JOIN departments ON degrees.department_id = departments.id
+GROUP BY dipartimento  
+ORDER BY `numero_lauree` DESC
